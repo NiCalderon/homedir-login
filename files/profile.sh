@@ -14,5 +14,8 @@ export EDITOR=vim
 # Source all file in the .profile.d directory
 for profile in ${HOME}/.profile.d/*;
 do
+	# Handle empty directory case, where globbing expands to itself
+	[ -e "$profile" ] || continue
+
 	. "$profile"
 done
