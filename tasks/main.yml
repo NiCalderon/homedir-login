@@ -5,3 +5,8 @@
     src: profile.sh
     dest: $HOME/.profile
 
+- name: .profile.d directory
+  file:
+    path: $HOME/.profile.d
+    state: directory
+    mode: 0755
